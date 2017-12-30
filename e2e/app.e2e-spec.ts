@@ -1,10 +1,10 @@
-import { TaxibookingPage } from './app.po';
+import { Ang4SeoPage } from './app.po';
 
-describe('taxibooking App', () => {
-  let page: TaxibookingPage;
+describe('ang4-seo App', () => {
+  let page: Ang4SeoPage;
 
   beforeEach(() => {
-    page = new TaxibookingPage();
+    page = new Ang4SeoPage();
   });
 
   it('should display message saying app works', () => {

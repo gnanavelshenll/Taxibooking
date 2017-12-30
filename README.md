@@ -1,14 +1,7 @@
-# angular4-ssr with Serverside Rendering
+# Angular 4+ SEO Starter Template
 
-This sample shows how to use the new serverside rendering implementation that will be introduced with Angular 4.
+This project is based on the [Angular SEO Tutorial](https://coursetro.com/posts/code/68/Make-your-Angular-App-SEO-Friendly-(Angular-4-+-Universal)) found at [Coursetro.com](https://coursetro.com)
 
-## Build and Start
+Feel free to clone this repo as a quick way to get up and running with an SEO-ready, Angular CLI-ready, Angular 4+ project.
 
-```
-npm run build:all
-cd dist
-node main.server.bundle.js
-```
-
-After this, open ``http://localhost:8000``.
-
+Simply clone the repo, run `npm install` in the project directory, then `npm run start`
