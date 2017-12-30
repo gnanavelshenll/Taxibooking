@@ -1,0 +1,213 @@
+<!-- Top Header Start -->
+
+<div class="container-fluid taxi-booking-heater">
+
+	<div class="taxi-heater">
+
+		<div class="container taxi-container-header">
+
+			<nav class="navbar taxi-navbar">
+
+				<div class="navbar-header">
+
+					<button type="button" class="navbar-toggle taxi_navbar_toggle" data-toggle="collapse" data-target="#dropdown-navbar">
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					</button>
+
+				</div>
+
+				<div class="collapse navbar-collapse" id="dropdown-navbar">
+
+					<ul class="nav navbar-nav navbar-right">
+
+						<li><a href="javascript:void(0)"> Wallet</a></li>
+
+						<li><a href="javascript:void(0)">My Bookings</a></li>
+
+						<li><a href="javascript:void(0)">Tracking</a></li>
+
+						<li><a href="javascript:void(0)">Support</a></li>
+
+					</ul>
+
+				</div>
+
+			</nav>
+
+		</div>
+
+	</div>
+
+	<div class="taxi-booking-navbar">
+
+		<div class="container taxi-navbar-container">
+
+			<nav class="navbar booking-navbar">
+
+				<div class="navbar-header booking-navbar-header">
+
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-taxi-booking">
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					</button>
+
+					<div class="booking-logo">
+
+						<img src="assets/images/Logo.png">
+
+					</div>
+
+				</div>
+
+				<div class="collapse navbar-collapse" id="navbar-taxi-booking">
+
+					<ul class="nav navbar-nav navbar-right">
+
+						<li><a href="index.html">Citi Taxi</a></li>
+
+						<li><a href="booking-ride.html">Out Station</a></li>
+
+						<li><a href="booking-confirmation.html">Rentals</a></li>
+
+						<li><a href="payment-new.html">Tariff</a></li>
+
+						<li><a href="finish-rides.html">Offers</a></li>
+
+						<li>
+
+							<a href="#" class="col-md-6 col-sm-6 col-xs-6 register" data-toggle="modal" data-target="#SignupModal">Register</a>
+
+							<a href="#" class="col-md-6 col-sm-6 col-xs-6 login" data-toggle="modal" data-target="#LoginModal">Login</a>
+
+						</li>
+
+					</ul>
+
+				</div>
+
+			</nav>
+
+		</div>		
+
+	</div>	
+
+</div>
+
+<!-- Top Header End -->
+
+
+
+
+<!-- Login Modal -->
+
+<div id="LoginModal" class="modal fade" role="dialog">
+
+	<div class="modal-dialog modal-sm">
+
+		<div class="modal-content">
+
+			<div class="modal-body login_modal_body">
+
+				<img src="assets/images/Logo.png" class="modal_logo">
+
+				<form action="" name="login">
+
+					<div class="form-group">
+
+						<input type="email" class="form-control" name="email" placeholder="Email Address" autocomplete="off">
+
+					</div>
+
+					<div class="form-group">
+
+						<input type="password" class="form-control" name="password" placeholder="Password" autocomplete="off">
+
+					</div>
+
+					<input type="submit" class="btn btn-search">
+
+					<p class="modal_text">Don't have an account? <a href="#" class="modal_link" data-toggle="modal" data-target="#SignupModal">Signup</a></p>
+
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+<!-- Signup Modal -->
+
+<div id="SignupModal" class="modal fade" role="dialog">
+
+	<div class="modal-dialog modal-sm">
+
+		<div class="modal-content">
+
+			<div class="modal-body signup_modal_body">
+
+				<img src="assets/images/Logo.png" class="modal_logo">
+
+				<form action="" name="login">
+
+					<div class="form-group">
+
+						<input type="text" class="form-control" name="email" placeholder="First Name" autocomplete="off">
+
+					</div>
+
+					<div class="form-group">
+
+						<input type="text" class="form-control" name="email" placeholder="Mobile Number" autocomplete="off">
+
+					</div>
+
+					<div class="form-group">
+             <input type="email" class="form-control"  placeholder="Email Address" emailvalidator id="email" name="email" [(ngModel)]="lecturer.email" required  
+ #email="ngModel">  
+            <div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">  
+            <p *ngIf="email.errors.required">Email is required</p>  
+            <p *ngIf="email.errors.emailvalidator">Please provide a valid email address</p>  
+            </div>  
+					</div>
+
+					<div class="form-group">
+
+						<input type="password" class="form-control" name="password" placeholder="Password" autocomplete="off">
+
+					</div>
+
+					<div class="form-group">
+
+						<input type="password" class="form-control" name="password" placeholder="Confirm Password" autocomplete="off">
+
+					</div>
+
+					<input type="submit" class="btn btn-search" >
+
+					<p class="modal_text">Already have an account? <a href="#" class="modal_link" data-toggle="modal" data-target="#LoginModal">Login</a></p>
+
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

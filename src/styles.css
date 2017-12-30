@@ -1,0 +1,1262 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+	font-family: 'Poppins-Bold';
+	src: url(assets/fonts/Poppins-Bold.ttf);
+}
+@font-face {
+	font-family: 'Poppins-Light';
+	src: url(assets/fonts/Poppins-Light.ttf);
+}
+@font-face {
+	font-family: 'Poppins-Medium';
+	src: url(assets/fonts/Poppins-Medium.ttf);
+}
+@font-face {
+	font-family: 'Poppins-SemiBold';
+	src: url(assets/fonts/Poppins-SemiBold.ttf);
+}
+@font-face {
+	font-family: 'Poppins-Regular';
+	src: url(assets/fonts/Poppins-Regular.ttf);
+}
+
+
+.taxi-booking-details{
+	padding: 0px;
+	background-image: url("assets/images/map.png");
+	height: 680px;
+	width: 100%;
+}
+.taxi-service-details{
+	padding: 0px;
+}
+.taxi-register-form .taxi-register{
+	padding: 0px;
+	margin: 20px 30px;
+	background: #000;
+	float: none;
+	overflow: hidden;
+}
+.taxi-register-form .taxi-register .register-content{
+	padding: 10px 30px 30px 30px;
+}
+.taxi-register-form .register-content h3{
+	font-size: 14px;
+	color: #fff;
+	font-family: 'Poppins-Medium';
+	margin: 0px;
+	line-height: 40px;
+	text-align: center;
+}
+.taxi-register-form .register-content p{
+	font-size: 12px;
+	color: #fff;
+	font-family: 'Poppins-Light';
+	margin: 0px 0px 20px;
+	text-align: center;
+}
+.taxi-register .register-tabs{
+	padding: 0px;
+	display: flex;
+	border-bottom: 1px solid #3B3B3B;
+}
+.taxi-register .register-tabs li{
+	list-style: none;
+	width: 33%;
+	text-align: center;
+}
+.taxi-register .register-tabs li .down-arrow{
+	width: 0px;
+	height: 0px;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 19px solid #FFC000;
+	position: absolute;
+	top: 36%;
+	right: 77%;
+}
+.taxi-register .register-tabs li a{
+	text-decoration: none;
+	font-size: 14px;
+	color: #fff;
+	font-family: 'Poppins-Regular';
+	float: left;   
+	padding: 25px 0px;
+	width: 100%;
+	color: #fff;
+	text-align: center;
+	position: relative;
+}
+.taxi-register .register-tabs li a.active{
+	background-color: #FFC000;
+	display: block;
+	float: left;   
+	padding: 25px 0px;  
+	color: #1c1c1c;
+}
+.taxi-register .register-tabs li a.active:after{
+	width: 0px;
+	height: 0px;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	display: block;
+	content: '';
+	position: absolute;
+	bottom: -15px;
+	left: calc(50% - 15px);
+	border-top: 15px solid #FFC000;
+}
+.taxi-register-form{
+	padding-left: 0px;
+	padding-top: 135px;
+}
+.taxi-register .register-content .form-control{
+	height: 46px;
+	border-radius: 0px;
+	background-color: #fff;
+	border: 1px solid #fff;
+	font-family: 'Poppins-Light';
+	color: #333;
+	font-size: 14px;
+}
+.taxi-register .register-content .form-control::-webkit-input-placeholder,
+.register-content #drop-locations{
+	font-family: 'Poppins-Medium';
+	color: #333;
+	font-size: 14px;
+}
+.taxi-register .register-content .btn-search{
+	background-color: #FFC000;
+	color: #000;
+	font-family: 'Poppins-SemiBold';
+	border: 1px solid #FFC000;
+	width: 100%;
+	border-radius: 0px;
+	height: 46px;
+	font-size: 16px;
+}
+@media (min-width: 0px) and (max-width: 767px){
+	.taxi-register .register-tabs li .down-arrow{
+		left: 20%;
+	}
+}
+/*booking rides*/
+
+
+/*Available Rides css*/
+
+.taxi-availavle-rides{
+	padding: 60px 0px;
+}
+.taxi-container-rides{
+	padding: 0px;
+}
+.taxi-container-rides .booking-title{
+	font-family: 'Poppins-SemiBold';
+	color: #333;
+	text-align: center;
+	font-size: 36px;
+	margin: 0px 0px 15px;
+}
+.taxi-booking-list{
+	padding: 0px;
+	margin: auto;
+	float: none;
+	width: 70%;
+}
+.taxi-booking-list table thead{
+	background-color: #000;
+}
+.taxi-booking-list table thead th{
+	font-size: 16px;
+	color: #fff;
+	font-family: 'Poppins-Regular';
+}
+.taxi-booking-list table thead th:nth-child(3), 
+.taxi-booking-list table thead th:nth-child(4){
+	text-align: center;
+}
+.taxi-booking-list table tbody{
+	border: 1px solid #E0E0E0;
+}
+.taxi-booking-list tbody tr td:nth-child(2){
+	padding-left: 0 !important;
+	width: 60px;
+}
+.taxi-booking-list tbody tr td:first-child {
+	width: 25px;
+	border-top: 0;
+	padding: 0;
+}
+.taxi-booking-list tbody tr td:last-child {
+	width: 25px;
+	border-top: 0;
+	padding: 0;
+}
+.taxi-booking-list table tbody tr td{
+	padding: 15px 0px;
+}
+.taxi-booking-list table tbody tr td h4{
+	font-family: 'Poppins-SemiBold';
+	color: #333;    
+	font-size: 20px;
+	margin: 0px;
+}
+.taxi-booking-list table tbody tr td p{
+	color: #A5A5A5;
+	font-family: 'Poppins-Regular';
+	font-size: 12px;
+	margin-bottom: 0px;
+}
+.taxi-booking-list table tbody tr td h6{
+	color: #A5A5A5;
+	font-family: 'Poppins-Regular';
+	font-size: 16px;
+	margin: 0px;
+}
+.taxi-booking-list table tbody tr td:nth-child(4){
+	font-family: 'Poppins-SemiBold';
+	color: #333;    
+	font-size: 18px;
+	text-align: center;
+}
+.taxi-booking-list table tbody tr td:nth-child(5){
+	text-align: center;
+	width: 25px;
+}
+.taxi-booking-list table tbody tr td:nth-child(5) .btn-booking{
+	background-color: #FFC000;
+	border: 1px solid #FFC000;
+	font-family: 'Poppins-medium';
+	color: #333;
+	font-size: 14px;
+	border-radius: 0px;
+}
+@media (min-width: 0px) and (max-width: 767px){
+	.taxi-booking-list{
+		width: 90%;
+	}
+	.taxi-booking-list table tbody tr td{
+		padding: 15px 10px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+	.taxi-booking-list{
+		width: 90%;
+	}	
+}
+@media (min-width: 991px) and (max-width: 1200px){
+	.taxi-navbar-container #navbar-taxi-booking ul li{
+		padding: 0px 10px;
+	}
+}
+@media (min-width: 991px){
+	.taxi-container-rides .taxi-booking-list{
+		overflow: visible;
+	}
+}
+
+
+
+/*booking confirmation css*/
+
+.taxi-confirmation-fluid{
+	padding: 45px 0px 100px;
+}
+.taxi-confirmation-container{
+	padding: 0px;
+}
+.taxi-confirmation-container .confirmation-title{
+	font-family: 'Poppins-SemiBold';
+	color: #333;
+	text-align: center;
+	font-size: 36px;
+	margin: 0px;
+	line-height: 40px;
+}
+.taxi-confirmation-container .confirmation-details{
+	font-family: 'Poppins-medium';
+	color: #FFC000;
+	font-size: 16px;
+	border-radius: 0px;
+	text-align: center;
+	line-height: 40px;
+	margin: 0px;
+}
+.taxi-trip-details{
+	padding: 30px 0px 0px;
+}
+.trip-details{
+	padding: 20px 10px;
+	border: 1px solid #ddd;
+	margin: auto;
+	float: none;
+	overflow: hidden;
+	width: 38%;
+	background: #F7F7F7;
+	border-radius: 6px;
+}
+.trip-details .trip-pickup{
+	margin-bottom: 20px;
+	overflow: hidden;
+	clear: both;
+}
+.trip-details .trip-pickup button{
+	background-color: #000;
+	color: #FFC000;
+	font-family: 'Poppins-SemiBold';
+	border: 1px solid #000;
+	font-size: 13px;
+	width: 80px;
+	height: 27px;
+	border-radius: 0px;
+}
+.trip-details .trip-drop-address p{
+	font-family: 'Poppins-medium';
+	color: #5A5A5A;
+	font-size: 14px;
+	margin: 0px;
+	line-height: 25px;
+}
+.drop-distance{
+	font-family: 'Poppins-Semibold';
+	color: #333;
+	font-size: 14px;
+	margin: 0px;
+	line-height: 25px;
+	padding: 0px;
+}
+.drop-amount{
+	font-family: 'Poppins-Semibold';
+	color: #5A5A5A;    
+	font-size: 18px;
+	margin: 0px;
+	line-height: 25px;
+	padding: 0px;
+	text-align: center;
+}
+.trip-optional{
+	display: flex;
+	padding: 0px 15px 0px 0px;
+}
+.trip-optional .form-control, .trip-optional .form-control:focus{
+	height: 45px;
+	border-radius: 6px 0px 0px 6px;
+	border-color: #EDEDED;
+	box-shadow: none;
+}
+.search-span, .search-span:hover{
+	background-color: #000;
+	color: #fff;
+	border-radius: 0px 6px 6px 0px;
+	padding: 10px 35px;
+}
+.coupon-code{
+	margin-top: 15px;
+}
+.coupon-code p{
+	font-family: 'Poppins-Medium';
+	color: #787878;
+	font-size: 14px;
+	margin: 0px;
+	line-height: 25px;
+	margin: 0px;
+}
+.trip-booking-btn{
+	margin-top: 25px;
+}
+.trip-booking-btn .btn-confirm, .trip-booking-btn .btn-cancel{
+	background-color: #FFC000;
+	color: #343434;
+	font-family: 'Poppins-SemiBold';
+	border: 1px solid #FFC000;
+	font-size: 16px;
+	width: 136px;
+	height: 45px;
+	margin: 0px 10px;
+}
+@media (min-width: 0px) and (max-width: 767px){
+	.trip-details{
+		width: 80%;
+	}
+	.taxi-confirmation-container .confirmation-details{
+		line-height: 25px;
+	}
+	.trip-details .trip-pickup, .drop-amount{
+		padding: 0px;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px){
+	.trip-details{
+		width: 80%;
+	}
+}
+
+/*payment method css*/
+.taxi-payment-fluid{
+	padding: 50px 0px 45px;
+}
+.taxi-payment-container .payment-title{
+	font-family: 'Poppins-SemiBold';
+	color: #333;
+	text-align: center;
+	font-size: 36px;
+	margin: 0px;
+	line-height: 40px;
+}
+.taxi-payment-container .payment-details{
+	font-family: 'Poppins-medium';
+	color: #FFC000;
+	font-size: 16px;
+	border-radius: 0px;
+	text-align: center;
+	line-height: 40px;
+	margin: 0px;
+}
+.taxi-payment-list{
+	padding: 0px;
+	float: none;
+	margin: auto;
+}
+.taxi-payment-card{
+	text-align: center;
+	padding: 27px 0px;	
+}
+.taxi-payment-card ul li{
+	font-size: 16px;	
+	background-color: #ededed;
+	padding: 4px 25px;
+	min-width: 190px;
+	border-radius: 0px;
+	height: 50px;
+	margin: 0px 10px;
+	box-shadow: none;
+}
+.taxi-payment-card ul li a, .taxi-payment-card ul li a:hover{
+	color: #333;
+	font-family: 'Poppins-Regular';
+	background-color: transparent !important;
+	border: none;
+	box-shadow: none;
+	font-size: 16px;
+}
+.taxi-payment-card ul li.active a, .taxi-payment-card ul li.active a:hover,
+.taxi-payment-card ul li.active a:focus{
+	color: #fff;
+	border: 0;
+	box-shadow: none;
+}
+.taxi-payment-card ul li.active{
+	background-color: #FFC000;	
+}
+.taxi-payment-card .nav-tabs{
+	border: none;
+}
+.payment-amount{
+	font-family: 'Poppins-medium';
+	color: #FFC000;
+	font-size: 16px;
+	border-radius: 0px;
+	text-align: center;
+	line-height: 30px;
+	margin: 0px;
+}
+.taxi-payment-details{
+	width: 440px;
+	margin: auto;
+	float: none;
+	background-color: #F7F7F7;
+	border: 1px solid #DCDCDC;
+	padding: 20px 35px 0px 20px;
+	border-radius: 6px;
+	overflow: hidden;
+}
+.taxi-payment-details label{
+	color: #777777;
+	font-family: 'Poppins-Medium';
+	font-size: 14px;
+	font-weight: 500;
+}
+.taxi-payment-details #card-name, .taxi-payment-details #card-number{
+	height: 45px;
+	border: 1px solid #EDEDED;
+	box-shadow: none;
+}
+.taxi-payment-details .credit-image{
+	position: relative;
+	top: -33px;
+	left: 87%;
+	padding: 0px 10px;
+	border-left: 1px solid #C6C6C6;
+}
+.payment-expiry .form-control{
+	height: 45px;
+	border: 1px solid #EDEDED;
+	box-shadow: none;
+}
+.payment-expiry .form-control::-webkit-input-placeholder{
+	font-family: 'Poppins-Medium';
+	color: #777777;
+	font-size: 16px;
+	text-align: center;
+}
+.payment-expiry #expiry-year{
+	margin-top: 25px;
+}
+.payment-expiry .col-md-4:nth-child(1){
+	padding-left: 0px;
+	margin-bottom: -10px;
+}
+.payment-expiry .col-md-4:nth-child(1):after{
+	content: "/";
+	position: relative;
+	left: 120px;
+	right: 0px;
+	font-size: 25px;
+	top: -38px;
+	color: #C6C6C6;
+}
+.credit-card-number{
+	margin-bottom: 0px;
+}
+.payment-expiry .col-md-4:nth-child(2){
+	padding: 0px 10px;
+	margin-bottom: 0px;
+}
+.payment-expiry .col-md-4:nth-child(3){
+	padding-right: 0px;
+	margin-bottom: 0px;
+}
+.payment-expiry .col-md-4:nth-child(3) .security-info{
+	position: relative;
+	top: -30px;
+	left: 67%;
+	border-left: 1px solid #C6C6C6;
+	padding: 0px 10px;
+}
+.taxi-paynow{
+	padding: 0px;
+	margin-top: 20px;
+}
+.taxi-paynow .paynow-btn{
+	background-color: #FFC000;
+	color: #343434;
+	font-family: 'Poppins-SemiBold';
+	border: 1px solid #FFC000;
+	font-size: 16px;
+	width: 136px;
+	height: 45px;
+	box-shadow: none;
+}
+
+@media (min-width: 0px) and (max-width: 360px){
+	.taxi-payment-details label{
+		font-size: 12px;
+	}
+}
+@media (min-width: 0px) and (max-width: 767px){
+	.taxi-payment-details{
+		width: 100%;
+		padding: 15px 15px 0px 15px;
+	}
+	.payment-expiry .col-md-4:nth-child(3), .payment-expiry .col-md-4:nth-child(1){
+		padding: 0px;
+	}	
+	.taxi-payment-card{
+		margin-left: 0px;
+	}
+	.taxi-payment-card ul li{
+		width: 150px;
+		margin: 0px auto 15px;
+		float: none;
+	}
+	.taxi-payment-container .payment-details{
+		line-height: 25px;
+	}
+	
+}
+@media (min-width: 768px) and (max-width: 991px){
+	.taxi-payment-card ul li{
+		min-width: 150px;
+	}
+}
+
+/*finish rides css*/
+.taxi-location-list{
+	padding: 0px;
+	margin: auto;
+	float: none;
+	width: 70%;
+}
+.taxi-location-list table thead{
+	background-color: #000;
+}
+.taxi-location-list table thead th{
+	font-size: 16px;
+	color: #fff;
+	font-family: 'Poppins-Regular';
+}
+.taxi-location-list table thead th:nth-child(4),
+.taxi-location-list table thead th:nth-child(5){
+	text-align: center;
+}
+.taxi-location-list table tbody td:nth-child(1){
+	width: 25px;
+	border-top: 0;
+	padding: 0;
+}
+.taxi-location-list table tbody{
+	border: 1px solid #E0E0E0;
+}
+.taxi-location-list table tbody td{
+	padding: 15px 0px;
+}
+.taxi-location-list table tbody td h4 span{
+	font-family: 'Poppins-SemiBold';
+	color: #333;
+	font-size: 16px;
+	margin: 0px;
+}
+.taxi-location-list table tbody td h4{
+	color: #A5A5A5;
+	font-family: 'Poppins-Regular';
+	font-size: 14px;
+	margin: 0px;
+	line-height: 22px;
+}
+.taxi-location-list table tbody td p{
+	color: #A5A5A5;
+	font-family: 'Poppins-Regular';
+	font-size: 12px;
+	margin-bottom: 0px;
+}
+.taxi-location-list table tbody td:nth-child(4){
+	font-family: 'Poppins-Regular';
+	color: #595959;
+	font-size: 18px;
+	margin: 0px;
+	vertical-align: middle;
+}
+.taxi-location-list table tbody td:nth-child(5){
+	font-family: 'Poppins-SemiBold';
+	color: #333;
+	font-size: 18px;
+	text-align: center;
+	vertical-align: middle;
+	padding: 15px 15px;
+}
+.taxi-location-list table tbody td:nth-child(6){
+	text-align: center;
+	width: 25px;
+	vertical-align: middle;
+}
+.taxi-location-list table tbody td .btn-booking{
+	background-color: #FFC000;
+	border: 1px solid #FFC000;
+	font-family: 'Poppins-medium';
+	color: #333;
+	font-size: 14px;
+	border-radius: 0px;
+	width: 110px;
+	height: 35px;
+}
+.taxi-location-list table tbody td:last-child{
+	width: 25px;
+	border-top: 0;
+	padding: 0;
+}
+
+@media (min-width: 0px) and (max-width: 767px){
+	.taxi-location-list{
+		width: 90%;
+	}
+	.taxi-location-list table tbody td:nth-child(2){
+		width: 50px;
+		display: block;
+	}
+	.taxi-location-list table tbody td:nth-child(4){
+		padding: 15px 5px;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px){
+	.taxi-location-list{
+		width: 90%;
+	}
+}
+@media (min-width: 992px){
+	.taxi-location-list{
+		overflow: visible;
+	}
+}
+
+
+
+.taxi-booking-details{
+	padding: 0px;
+	background-image: url("assets/images/banner.png");
+	height: 680px;
+    width: 100%;
+    background-repeat: no-repeat;
+    margin-top: 31px;
+}
+.taxi-container-details{
+	padding: 0px;
+}
+.booking-navbar-header .navbar-toggle, .booking-navbar-header .navbar-toggle span{
+	border: 1px solid #fff;
+}
+.taxi-service-datils, .taxi-safe-hands{
+	padding: 0px;
+}
+.taxi-service-datils .taxi-safe-hands{
+	padding-top: 270px;
+}
+.taxi-safe-hands h4{
+	color: #fff;
+	font-size: 36px;
+	margin: 0px;
+	font-family: 'Poppins-Bold';
+	text-align: center;
+	line-height: 60px;
+}
+.taxi-safe-hands h3{
+	color: #fff;
+	font-size: 60px;
+	margin: 0px;
+	font-family: 'Poppins-Bold';
+	text-align: center;
+	line-height: 60px;
+}
+.taxi-register-form .taxi-register{
+	padding: 0px;
+	margin: 20px auto;
+	width: 70%;
+	background: #000;
+	float: none;
+	overflow: hidden;
+}
+.taxi-register-form .taxi-register .register-content{
+	padding: 10px 30px 30px 30px;
+}
+.taxi-register-form .register-content h3{
+	font-size: 14px;
+	color: #fff;
+	font-family: 'Poppins-Medium';
+	margin: 0px;
+	line-height: 40px;
+	text-align: center;
+}
+.taxi-register-form .register-content p{
+	font-size: 12px;
+	color: #fff;
+	font-family: 'Poppins-Light';
+	margin: 0px 0px 20px;
+	text-align: center;
+}
+.taxi-register .register-tabs{
+	padding: 0px;
+	display: flex;
+	border-bottom: 1px solid #3B3B3B;
+}
+.taxi-register .register-tabs li{
+	list-style: none;
+	width: 33%;
+	text-align: center;
+}
+.taxi-register .register-tabs li .down-arrow{
+	width: 0px;
+	height: 0px;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 19px solid #FFC000;
+	position: absolute;
+	top: 36%;
+	right: 77%;
+}
+.taxi-register .register-tabs li a{
+	text-decoration: none;
+	font-size: 14px;
+	color: #fff;
+	font-family: 'Poppins-Regular';
+	float: left;   
+	padding: 25px 0px;
+	width: 100%;
+	color: #fff;
+	text-align: center;
+	position: relative;
+}
+.taxi-register .register-tabs li a.active{
+	background-color: #FFC000;
+	display: block;
+	float: left;   
+	padding: 25px 0px;  
+	color: #1c1c1c;
+}
+.taxi-register .register-tabs li a.active:after{
+	width: 0px;
+	height: 0px;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	display: block;
+	content: '';
+	position: absolute;
+	bottom: -15px;
+	left: calc(50% - 15px);
+	border-top: 15px solid #FFC000;
+}
+.taxi-register-form{
+	padding-left: 0px;
+	padding-top: 95px;
+}
+.taxi-register .register-content .form-control{
+	height: 46px;
+	border-radius: 0px;
+	background-color: #fff;
+	border: 1px solid #fff;
+	font-family: 'Poppins-Light';
+	color: #333;
+	font-size: 14px;
+}
+.taxi-register .register-content .form-control::-webkit-input-placeholder,
+.register-content #drop-locations{
+	font-family: 'Poppins-Medium';
+	color: #333;
+	font-size: 14px;
+}
+.taxi-register .register-content .btn-search{
+	background-color: #FFC000;
+	color: #000;
+	font-family: 'Poppins-SemiBold';
+	border: 1px solid #FFC000;
+	width: 100%;
+	border-radius: 0px;
+	height: 46px;
+	font-size: 16px;
+}
+@media (min-width: 0px) and (max-width: 767px){
+	.taxi-register .register-tabs li .down-arrow{
+		left: 20%;
+	}
+	.taxi-register-form{
+		padding-top: 10px;
+	}
+}
+
+.navbar{border: 0;}
+@media (min-width: 0px) and (max-width: 767px){
+	.taxi-container-details #navbar-taxi-booking ul li:last-child a{
+		background-color: transparent;
+		color: #fff;		
+	}
+	.taxi-container-details #navbar-taxi-booking ul li:last-child{
+		padding: 0px 20px;
+	}
+	.taxi-service-datils .taxi-safe-hands{
+		margin-top: 0px;
+	}
+	.taxi-safe-hands h4{
+		font-size: 30px;
+		line-height: 30px;
+	}
+	.taxi-safe-hands h3{
+		font-size: 40px;
+		line-height: 40px;
+	}
+	.taxi-container-details .booking-navbar{
+		margin-bottom: 0px;
+	}
+	.taxi-container-details .booking-navbar{
+		padding: 10px 0px;
+	}	
+}
+@media (min-width: 530px) and (max-width: 767px){
+	.taxi-register-form .taxi-register{
+		width: 70%;
+		margin: 5px auto;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+	.taxi-container-details #navbar-taxi-booking ul li a{
+		padding: 8px 10px;
+	}
+	.taxi-container-details #navbar-taxi-booking ul li{
+		padding: 0px;
+	}
+	.taxi-register-form .taxi-register{
+		width: 100%;
+		margin: auto;
+	}
+}
+@media (min-width: 992px) and (max-width: 1200px){
+	.taxi-navbar-container #navbar-taxi-booking ul li{
+		padding: 0px 20px;
+	}
+}
+
+/* Welcome Container */
+.welcome_container{padding: 50px 0;}
+.welcome_container .what_we{font-size: 16px;color: #FFC000;font-family: 'Poppins-Medium';margin: 0 !important;}
+.welcome_container .welcome{font-size: 48px;color: #000;font-family: 'Poppins-SemiBold';margin-top: 10 !important;margin-bottom: 20 !important;}
+.welcome_container .welcome_text{font-size: 12px;color: #888;font-family: 'Poppins-Light';padding-bottom: 40px;}
+.welcome_container .category_header{font-size: 24px;color: #333;font-family: 'Poppins-Medium';margin-bottom: 20px !important;}
+.welcome_container .category_text{font-size: 14px;color: #777;font-family: 'Poppins-Light';margin: 0 !important;}
+.welcome_container .side_border{border-right: 1px solid #ccc;}
+
+/* Mission Container */
+.mission_container{padding: 50px 0;background-color: #f8f8f8;}
+.mission_container .mission_content{padding: 0px !important;}
+.mission_container .about_us{font-size: 16px;color: #FFC000;font-family: 'Poppins-Medium';margin: 0 !important;padding: 25px 0;}
+.mission_container .mission_statement{font-size: 48px;color: #000;font-family: 'Poppins-SemiBold';margin: 0 !important;padding-bottom: 25px;}
+.mission_container .mission_text{font-size: 14px;color: #888;font-family: 'Poppins-Light';}
+.mission_container .mission_text{font-size: 14px;color: #888;font-family: 'Poppins-Light';}
+.mission_container .mission_category{padding: 0px; padding-top: 35px;padding-right: 15px;}
+.mission_container .mission_category_text{font-size: 12px;color: #000;font-family: 'Poppins-Medium';padding: 25px 0;}
+
+/* Service Container */
+.service_container{
+	padding: 50px 0;
+}
+.service_container .service{
+	font-size: 16px;
+	color: #FFC000;
+	font-family: 'Poppins-Medium';
+	margin: 0 !important;
+}
+.service_container .available{
+	font-size: 48px;
+	color: #000;
+	font-family: 'Poppins-SemiBold';
+	margin-top: 10 !important;
+	margin-bottom: 20 !important;
+}
+.service_container .variety_btn:hover, .variety_btn:focus, .variety_btn:active{
+	font-size: 16px;
+	color: #333;
+	font-family: 'Poppins-Regular';
+	background-color: #FFC000;
+	outline: none;
+}
+.service_contents{
+	padding: 0px;
+	margin: auto;
+	float: none;
+}
+.service_container .taxi-nav-tabs li{
+	background-color: #ededed;
+	padding: 8px 20px;
+	min-width: 190px;
+	border-radius: 0px;
+	margin: 0px 10px;
+}
+.service_container .taxi-nav-tabs li.active{
+	background-color: #FFC000;
+	outline: none;
+}
+.service_container .taxi-nav-tabs li.active a, .service_container .taxi-nav-tabs li.active a:hover,
+.service_container .taxi-nav-tabs li a:focus{
+	color: #fff;
+	border: none;
+	box-shadow: none;
+	background-color: transparent;
+}
+.service_container .taxi-nav-tabs{
+	border: none;
+	padding: 20px 0px 0px;
+}
+.service_container .taxi-nav-tabs li a, .service_container .taxi-nav-tabs li a:hover{
+	font-size: 16px;
+	padding: 5px 15px;
+	color: #333;
+	font-family: 'Poppins-Regular';
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+}
+.service_container .service_content{
+	margin: 50px 0;
+	padding: 30px;
+	box-shadow: 1px 0 6px 2px #ededed;
+	z-index: 999;
+	background-color: #fff;
+	padding-bottom: 50px;
+}
+.service_container .service_img{
+	margin: 50px 0;
+}
+.service_container .service_car_img{
+	margin-left: -70px;
+}
+.service_container .service_items{
+	padding: 0px;
+}
+.service_container .service_header{
+	padding: 0px;
+	text-align: left;
+	font-size: 14px;
+	color: #777;
+	font-family: 'Poppins-Medium';
+	padding-bottom: 8px;
+}
+.service_container .service_text{
+	padding: 0px;
+	text-align: right;
+	font-size: 14px;
+	color: #777;
+	font-family: 'Poppins-Medium';
+	padding-bottom: 8px;
+}
+.service_container .book_btn{
+	font-size: 16px;
+	color: #333;
+	font-family: 'Poppins-SemiBold';
+	background-color: #FFC000;
+	padding: 8px 25px;
+	min-width: 150px;
+	position: absolute;
+	margin-left: -233px;
+	margin-top: 170px;
+}
+.service_container .book_btn:hover, .book_btn:focus, .book_btn:active{
+	outline: none;
+}
+.service_container .service_tollfree{
+	font-size: 18px;
+	color: #000;
+	font-family: 'Poppins-SemiBold';
+}
+.service_container .service_panel{
+	padding: 0;
+}
+@media (min-width: 0px) and (max-width: 767px){
+	.service_container .taxi-nav-tabs li{
+		width: 150px;
+		margin: 0px auto 15px;
+		float: none;
+	}
+	.service_container .service_content, .service_container .service_img {
+		margin: 25px auto;
+		float: none;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px){
+	.service_container .taxi-nav-tabs li{
+		min-width: 160px;
+		padding: 8px 10px;
+	}
+}
+
+/* Application Container */
+.application_container{padding: 50px 0;background-color: #f8f8f8;}
+.application_container .search{font-size: 16px;color: #FFC000;font-family: 'Poppins-Medium';margin: 0 !important;padding: 25px 0;}
+.application_container .application{font-size: 48px;color: #000;font-family: 'Poppins-SemiBold';margin: 0 !important;padding-bottom: 25px;}
+.application_container .sub_head{font-size: 16px;color: #333;font-family: 'Poppins-Medium';}
+.application_container .app_text{font-size: 14px;color: #888;font-family: 'Poppins-Light';padding-bottom: 20px;}
+.application_container .play_store{padding: 0px;}
+
+/* Ad Container */
+.advertise_container{padding: 60px 0;background-color: #FFC000;}
+.advertise_container .advertise_content{padding: 0px;}
+.advertise_container .advertise{font-size: 36px;color: #000;font-family: 'Poppins-Medium';margin: 0 !important;padding-bottom: 25px;padding-top: 15px;}
+.advertise_container .advertise_text{font-size: 14px;color: #000;font-family: 'Poppins-Regular';margin: 0 !important;padding-bottom: 25px;}
+.advertise_container .advertise_contact{font-size: 24px;color: #333;font-family: 'Poppins-Regular';margin: 0 !important;padding-bottom: 25px;}
+.advertise_container .advertise_btn{font-size: 18px;color: #fff;font-family: 'Poppins-Medium';background-color: #d82a2b;border-radius: 0px;}
+.advertise_container .advertise_btn:hover, .advertise_btn:focus, .advertise_btn:active{outline: none;}
+
+/* Footer Container */
+.footer_container{padding: 25px 0;background-color: #3a3a3a;}
+.footer_container .copy_right{text-decoration: none;font-size: 12px;color: #fff;font-family: 'Poppins-Regular';margin: 0 !important;}
+
+/* Login Modal */
+.login_modal_body{text-align: center;padding: 30px 50px !important;}
+.modal_logo{padding: 0;padding-bottom: 30px;}
+.modal_link:link, .modal_link:hover, .modal_link:visited, .modal_link:active, .modal_link:focus{text-decoration: none;color: #FFC000;}
+.modal_text{text-decoration: none;font-size: 13px;color: #000;font-weight: bolder;font-family: 'Poppins-Regular';}
+.modal_input{margin-bottom: 15px;}
+.login_modal_body .form-group{margin-bottom: 10px !important;}
+.login_modal_body input[type="submit"]{margin-bottom: 5px !important;margin-top: 8px !important;width: 100%;color: #a8a8a8;height: 42px !important;font-size: 14px;text-transform: uppercase;font-family: 'Poppins-Regular';}
+.login_modal_body .form-control:focus,.login_modal_body .form-control{box-shadow: none !important;border-color: #ccc;height: 42px !important; font-family: 'Poppins-Regular';}
+
+/* Signup Modal */
+.signup_modal_body{text-align: center;padding: 30px 50px !important;}
+.modal_logo{padding: 0;padding-bottom: 30px;}
+.modal_link:link, .modal_link:hover, .modal_link:visited, .modal_link:active, .modal_link:focus{text-decoration: none;color: #FFC000;}
+.modal_text{text-decoration: none;font-size: 13px;color: #000;font-weight: bolder;font-family: 'Poppins-Regular';}
+.modal_input{margin-bottom: 15px;}
+.signup_modal_body .form-group{margin-bottom: 10px !important;}
+.signup_modal_body input[type="submit"]{margin-bottom: 5px !important;margin-top: 8px !important;width: 100%;color: #a8a8a8;height: 42px !important;font-size: 14px;text-transform: uppercase;font-family: 'Poppins-Regular';}
+.signup_modal_body .form-control:focus,.signup_modal_body .form-control{box-shadow: none !important;border-color: #ccc;height: 42px !important; font-family: 'Poppins-Regular';}
+
+@media (min-width: 768px){
+	.modal-sm {
+	    width: 375px;
+	}
+}
+
+@media (min-width: 1200px){
+	
+}
+
+@media (min-width: 993px) and (max-width: 1199px){
+	.welcome_container,.mission_container,.service_container,.application_container,.advertise_container{padding: 30px 0;}
+	.taxi-container-details .booking-navbar{padding: 20px 15px;}
+	.taxi-safe-hands h4{font-size: 30px;}
+	.taxi-safe-hands h3{font-size: 45px;}
+	.taxi-container-details #navbar-taxi-booking ul li a, #navbar-taxi-booking ul li a:hover{padding: 8px;}
+	.taxi-container-details #navbar-taxi-booking ul li:last-child a{padding: 8px 15px;}
+	.taxi-register-form .taxi-register{margin: 0;}
+	.mission_container .container{padding: 0px;}
+	.mission_container .mission_statement{font-size: 35px;padding-bottom: 25px;}
+	.mission_container .about_us{padding: 25px 0;}
+	.mission_container .mission_category{padding-top: 20px;padding-right: 25px;}
+	.mission_container .mission_content {padding: 0px 15px !important;}
+	.mission_container .mission_content:last-child{padding-left: 30px !important;}
+	.taxi-service-datils .taxi-safe-hands{padding-top: 140px;}
+	.service_contents{padding: 0;}
+	.service_container .variety_btn{min-width: 100px;}
+	.service_container .service_content{margin: 50px 0;padding: 20px 25px;padding-bottom: 35px;}
+	.service_container .service_car_img{width: 400px;}
+	.service_container .book_btn{margin-left: -212px;margin-top: 145px;}
+	.service_container .service_header, .service_container .service_text{font-size: 13px;}
+	.advertise_container .advertise{font-size: 34px;}
+	.welcome_container .welcome, .service_container .available, .application_container .application{font-size: 38px;}
+	.application_container .play_store_btn{width: 90%;}
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+	.welcome_container,.mission_container,.service_container,.application_container,.advertise_container{padding: 30px 0;}
+	.taxi-container-details .booking-navbar{padding: 15px;}
+	.taxi-safe-hands h4{font-size: 18px;text-align: left;padding-left: 20px;}
+	.taxi-safe-hands h3{font-size: 32px;text-align: left;padding-left: 20px;}
+	.taxi-container-details #navbar-taxi-booking ul li a, #navbar-taxi-booking ul li a:hover{padding: 8px;}
+	.taxi-container-details #navbar-taxi-booking ul li{padding: 0}
+	.taxi-container-details #navbar-taxi-booking ul li:last-child{width: 145px;}
+	.taxi-container-details #navbar-taxi-booking ul li:last-child a{padding: 8px;text-align: center;}
+	/*.taxi-register-form .taxi-register{margin-left: -38px;}*/
+	.mission_container .container{padding: 0px;}
+	.mission_container .mission_statement{font-size: 25px;padding-bottom: 10px;}
+	.mission_container .about_us{padding: 10px 0;}
+	.mission_container .mission_category{padding-top: 10px;padding-right: 0px;}
+	.mission_container .mission_content {padding: 0px 15px !important;}
+	.mission_container .mission_content:last-child{padding-left: 0px !important;}
+	.taxi-service-datils .taxi-safe-hands{padding-top: 140px;}
+	.service_contents{padding: 0;}
+	.service_container .variety_btn{min-width: 100px;}
+	.service_container .service_content{margin: 30px 0;padding: 20px 25px;padding-bottom: 35px;}
+	.service_container .service_car_img{width: 400px;}
+	.service_container .book_btn{margin-left: -212px;margin-top: 145px;}
+	.service_container .service_header, .service_container .service_text{font-size: 13px;}
+	.advertise_container .advertise{font-size: 24px;}
+	.welcome_container .welcome, .service_container .available, .application_container .application{font-size: 30px;}
+	.application_container .play_store_btn{width: 90%;}
+	.welcome_container .category_header{font-size: 18px;}
+	.welcome_container .welcome_text{padding-bottom: 20px;}
+	.mission_img{width: 99%;}
+	.mission_container .mission_text{font-size: 12px;}
+	.mission_container .mission_category_text{padding: 0;padding-top: 15px;margin: 0px;}
+	.service_container .service_img{margin: 30px 0;}
+	.service_container .service_panel{padding: 0 15px;} 
+	.application_container .search{padding: 15px 0;}
+	.application_container .application{padding-bottom: 10px;}
+	.application_container .app_text{padding-bottom: 5px;}
+	.advertise_container .advertise_content:last-child{padding-left: 30px;}
+	.advertise_container .advertise_contact{font-size: 18px;}
+}
+
+@media (min-width: 519px) and (max-width: 767px){
+	.welcome_container,.mission_container,.service_container,.application_container,.advertise_container{padding: 20px 0;}
+	/*.taxi-container-details #navbar-taxi-booking ul li a, #navbar-taxi-booking ul li a:hover{text-align: center;}*/
+	.taxi-container-details #navbar-taxi-booking ul li:last-child a{background-color: transparent;color: #fff;text-align: right;padding: 8px 0;}
+	.taxi-container-details #navbar-taxi-booking ul li:last-child a:last-child{background-color: transparent;color: #fff;text-align: left;}
+	.taxi-container-details #navbar-taxi-booking ul li:last-child{padding: 0px 20px;}
+	.taxi-service-datils .taxi-safe-hands{margin-top: 0px;}
+	.taxi-container-details #navbar-taxi-booking ul li:last-child{width: auto;}
+	.taxi-service-datils{padding: 0 15px}
+	.taxi-service-datils .taxi-safe-hands{padding-top: 90px;}
+	/*.taxi-register-form .taxi-register{width: auto;margin: auto;}*/
+	#navbar-taxi-booking,.navbar.booking-navbar{margin: 0}
+	.taxi-container-details .booking-navbar {padding: 15px 0px;}
+	.booking-logo{margin-top: 6px;margin-left: 15px;}
+	.taxi-safe-hands h4 {font-size: 25px;}
+	.taxi-safe-hands h3 {font-size: 40px;}
+	#taxi-booking .form-group{margin-bottom: 10px;}
+	.register-tabs{margin-bottom: 0}
+	/*.<img src="images/car4.png" class="img-responsive">{height: auto;}*/
+	.taxi-register .register-tabs li{width: 33.3333%;text-align: center;}
+	.welcome_container .welcome_text{padding-bottom: 15px;}
+	.welcome_container .side_border{border: 0}
+	.mission_container .mission_content{text-align: center;}
+	.mission_container .mission_category{padding-top: 10px;padding-right: 0}
+	.mission_container .mission_category_text{padding: 10px 0;margin-bottom: 0;padding-bottom: 0}
+	.service_container .variety_btn{min-width: 0}
+	.service_container .service_content, .service_container .service_img{margin: 25px auto;}
+	.service_container .service_content{padding: 20px}
+	.service_container .book_btn{position: relative;margin: 0}
+	.service_container .service_car_img{margin: 0}
+	.img_responsive_custom{display:block;max-width:100%;height:auto;margin: auto !important;}
+	.application_container .search,.application_container .application{text-align: center;}
+	.welcome_container .welcome,.service_container .available{font-size: 35px;margin-top: 7px !important;margin-bottom: 10px !important;}
+	.mission_container .about_us{padding: 15px 0;}
+	.mission_container .mission_statement{font-size: 35px;padding-bottom: 15px;}
+	.service_container .variety_btn{padding: 8px 15px;}
+	.application_container .search{padding: 10px 0;}
+	.application_container .application{font-size: 34px;padding-bottom: 10px;}
+	.application_container .play_store_btn{text-align: center;padding: 0 10px !important;}
+	.advertise_container .advertise{font-size: 34px;padding: 15px 0}
+	.advertise_container .advertise_text{padding-bottom: 10px;}
+	.advertise_container .advertise_contact{font-size: 22px;padding-bottom: 10px;}
+	.advertise_container{text-align: center;}
+}
+
+@media (min-width: 320px) and (max-width: 520px){
+	.welcome_container,.mission_container,.service_container,.application_container,.advertise_container{padding: 20px 0;}
+	.taxi-container-details #navbar-taxi-booking ul li a, #navbar-taxi-booking ul li a:hover{text-align: center;font-size: 13px}
+	.taxi-container-details #navbar-taxi-booking ul li:last-child a{background-color: transparent;color: #fff;text-align: right;padding: 8px 0;}
+	.taxi-container-details #navbar-taxi-booking ul li:last-child a:last-child{background-color: transparent;color: #fff;text-align: left;}
+	.taxi-container-details #navbar-taxi-booking ul li:last-child{padding: 0px 20px;}
+	.taxi-service-datils .taxi-safe-hands{margin-top: 0px;}
+	.taxi-container-details #navbar-taxi-booking ul li:last-child{width: auto;}
+	.taxi-service-datils{padding: 0 15px}
+	.taxi-service-datils .taxi-safe-hands{padding-top: 90px;}
+	.taxi-register-form .taxi-register{width: auto;margin: auto;}
+	#navbar-taxi-booking,.navbar.booking-navbar{margin: 0}
+	.taxi-container-details .booking-navbar {padding: 15px 0px;}
+	.booking-logo{margin-top: 6px;margin-left: 15px;}
+	.taxi-safe-hands h4 {font-size: 16px;}
+	.taxi-safe-hands h3 {font-size: 22px;}
+	#taxi-booking .form-group{margin-bottom: 10px;}
+	.register-tabs{margin-bottom: 0}
+	/*.taxi-booking-details{height: auto;}*/
+	/*.taxi-register .register-tabs li{width: 33.3333%;text-align: center;padding: 25px 15px;}*/
+	.welcome_container .welcome_text{padding-bottom: 15px;}
+	.welcome_container .side_border{border: 0}
+	.mission_container .mission_content{text-align: center;}
+	.mission_container .mission_category{padding-top: 10px;padding-right: 0}
+	.mission_container .mission_category_text{padding: 10px 0;margin-bottom: 0;padding-bottom: 0}
+	.service_container .variety_btn{min-width: 0}
+	.service_container .service_content, .service_container .service_img{margin: 25px auto;}
+	.service_container .service_content{padding: 20px}
+	.service_container .book_btn{position: relative;margin: 0}
+	.service_container .service_car_img{margin: 0}
+	.img_responsive_custom{display:block;max-width:100%;height:auto;margin: auto !important;}
+	.application_container .search,.application_container .application{text-align: center;}
+	.welcome_container .welcome,.service_container .available{font-size: 25px;margin-top: 7px !important;margin-bottom: 10px !important;}
+	.mission_container .about_us{padding: 15px 0;}
+	.mission_container .mission_statement{font-size: 23px;padding-bottom: 15px;}
+	.service_container .variety_btn{padding: 8px 15px;width: 140px;margin-bottom: 3px;}
+	.application_container .search{padding: 10px 0;font-size: 14px}
+	.application_container .application{font-size: 21px;padding-bottom: 10px;}
+	.application_container .play_store_btn{text-align: center;padding: 0 10px !important;}
+	.advertise_container .advertise{font-size: 20px;padding: 15px 0}
+	.advertise_container .advertise_text{padding-bottom: 10px;font-size: 12px;}
+	.advertise_container .advertise_contact{font-size: 16px;padding-bottom: 10px;}
+	.advertise_container{text-align: center;}
+	.welcome_container .category_header{font-size: 16px;margin-bottom: 15px !important;}
+	.service_container .service{font-size: 13px;}
+	.service_container .service_tollfree{margin-top: 10px;}
+	.service_container .service_header,.service_container .service_text{font-size: 13px;}
+	.application_container .app{padding: 0}
+	.footer_container .copy_right{font-size: 10px;}
+	.footer_container{padding: 10px;}
+}

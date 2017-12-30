@@ -1,0 +1,255 @@
+
+/********* Header css ******************/
+
+
+
+.taxi-booking-heater{
+
+	padding: 0px;
+
+	position: absolute;
+
+	overflow: hidden;
+
+	left: 0px;
+
+	right: 0px;
+
+	top: 0px;
+
+	z-index: 9999;
+
+}
+
+.taxi-heater{
+
+	padding-right: 0px;
+
+	padding-left: 0px;
+
+	background-color: #000;
+
+}
+
+.taxi-container-header{
+
+	padding-left: 0px;
+
+	padding-right: 0px; 
+
+}
+
+.taxi-container-header .taxi-navbar{
+
+	min-height: 20px;
+
+	margin-bottom: 0px;
+
+}
+
+#dropdown-navbar{
+
+	padding: 0px;
+
+}
+
+#dropdown-navbar ul li{
+
+	padding: 0px 10px;
+
+}
+
+#dropdown-navbar ul li a, #dropdown-navbar ul li a:hover{
+
+	color: #fff;
+
+	background-color: #000;
+
+	padding: 8px 10px 6px;
+
+	font-family: 'Poppins-Regular';
+
+	font-size: 12px;
+
+}
+
+#dropdown-navbar ul li:nth-child(1):after{
+
+	display: none;
+
+}
+
+#dropdown-navbar ul li:after{
+
+	content: "|";
+
+	position: absolute;
+
+	left: 0px;
+
+	right: 0px;
+
+	top: 5px;
+
+	color: #fff;
+
+}
+
+.taxi-container-header .taxi-navbar .taxi_navbar_toggle,
+
+.taxi-navbar .taxi_navbar_toggle span{
+
+	border: 1px solid #fff;
+
+}
+
+.taxi-booking-navbar{
+
+	padding: 0px;
+
+	opacity: 1;
+
+	content: '\A';
+
+	width: 100%;
+
+	top: 0;
+
+	left: 0;
+
+	background: rgba(27, 25, 25, 0.31);
+
+}
+
+.taxi-navbar-container .booking-navbar{
+
+	margin-bottom: 0px;
+
+}
+
+.taxi-container-details, .taxi-navbar-container{
+
+	padding: 0px;
+
+}
+
+.taxi-navbar-container .booking-navbar{
+
+	padding: 20px 0px;
+
+}
+
+.taxi-navbar-container #navbar-taxi-booking ul li{
+
+	padding: 0px 25px;
+
+	color: #fff;
+
+}
+
+.taxi-navbar-container #navbar-taxi-booking ul li:last-child{
+
+	padding: 0px;
+
+	background-color: #FFC000;
+
+	margin-left: 20px;
+
+}
+
+.taxi-navbar-container #navbar-taxi-booking ul li a, #navbar-taxi-booking ul li a:hover{
+
+	font-size: 16px;
+
+	color: #fff;
+
+	font-family: 'Poppins-Regular';
+
+	background-color: transparent;
+
+	padding: 8px 8px;
+
+}
+
+.taxi-navbar-container #navbar-taxi-booking ul li:last-child a{
+
+	background-color: #FFC000;
+
+	color: #010101;	
+
+}
+
+.taxi-navbar-container #navbar-taxi-booking ul li .register{
+
+	padding: 8px 15px;
+
+	width: 90px;
+
+}
+
+.taxi-navbar-container #navbar-taxi-booking ul li .register:after{
+
+	content: "/";
+
+	position: absolute;	
+
+	right: 0px;
+
+	top: 8px;
+
+	color: #000;
+
+}
+
+.taxi-navbar-container #navbar-taxi-booking ul li .login{
+
+	padding: 8px 5px;
+
+	text-align: center;
+
+	width: 60px;
+
+}
+
+.taxi-navbar-container .navbar-toggle, .booking-navbar-header .navbar-toggle span{
+
+	border: 1px solid #fff;
+
+}
+
+@media (min-width: 0px) and (max-width: 767px){
+
+	#dropdown-navbar ul li:after{
+
+		content: "";
+
+	}
+
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+
+	#navbar-taxi-booking{
+
+		padding: 0px;
+
+	}
+
+	.taxi-navbar-container #navbar-taxi-booking ul li a{
+
+		padding: 8px 10px;
+
+	}
+
+	.taxi-navbar-container #navbar-taxi-booking ul li{
+
+		padding: 0px;
+
+	}
+
+}
+
+
+
+/*header css end*/
+
