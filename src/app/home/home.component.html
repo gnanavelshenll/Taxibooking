@@ -19,10 +19,13 @@
 							<h3>Your everyday travel partner</h3>
 							<p>Ac Cabs for point to point travel</p>
 							<div class="form-group">
-								<input type="text" class="form-control" id="locations" placeholder="Current Location" name="locations">
+								<!--<input type="text" class="form-control" id="locations" placeholder="Current Location" name="locations">-->
+								<input type="text" class="form-control" placeholder="Current Location" name="location" [(ngModel)]="location" #LocationCtrl="ngModel" Googleplace (setAddress)="getAddressOnChange($event,LocationCtrl)">
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" id="drop-locations" placeholder="Drop Locations" name="drop-locations">
+								<!--<input type="text" class="form-control" id="drop-locations" placeholder="Drop Locations" name="drop-locations">-->
+
+								<input type="text" class="form-control" placeholder="Drop Location" name="droplocation" [(ngModel)]="droplocation" #LocationCtrl="ngModel" Googleplace (setAddress)="getAddressOnChange($event,LocationCtrl)">
 							</div>
 							<div class="form-group">
 								<select class="form-control" id="nowlocation" name="nowlocation">

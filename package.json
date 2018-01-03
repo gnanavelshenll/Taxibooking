@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "prestart": "ng build --prod && ngc",
-    "start": "ts-node src/server.ts"    
+    "start": "ts-node src/server.ts"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "jquery": "^3.2.1",
+    "ng2-google-place-autocomplete": "^1.4.2",
     "rxjs": "^5.1.0",
     "tether": "^1.4.3",
     "zone.js": "^0.8.4"

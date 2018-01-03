@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
+//import { GoogleplaceDirective } from '../directive/googleplace-directive';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +9,12 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+ public location : Object;
+ public droplocation : Object;
 
   constructor(meta: Meta, title: Title) { 
 
-    title.setTitle('My Spiffy Home Page');
+    title.setTitle('My Home Page');
 
     meta.addTags([ 
       {
@@ -29,4 +33,10 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  getAddressOnChange(event,LocationCtrl){
+    console.log("event",event);
+
+    console.log("location",LocationCtrl);
+  }
+ 
 }

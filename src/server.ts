@@ -28,14 +28,9 @@ app.set('views', 'src')
 app.get('*.*', express.static(join(__dirname, '..', 'dist')));
 
 app.get('*', (req, res) => {
-
-    console.log("test",req);
-    console.log("test2",res);
-
   res.render('index', { req });
 });
 
 app.listen(PORT, () => {
-
   console.log(`listening on http://localhost:${PORT}!`);
 });
