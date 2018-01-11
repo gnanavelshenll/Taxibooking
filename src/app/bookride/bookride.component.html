@@ -1,0 +1,156 @@
+<div class="container-fluid taxi-booking-details" >
+    <div class="container taxi-container-details">
+        <div class="col-md-12 col-sm-12 col-xs-12 taxi-service-datils">
+            <div class="col-md-6 col-sm-6 col-xs-12 taxi-safe-hands">
+                <h4>You are in Safe Hands</h4>
+                <h3>Best Taxi Services</h3>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 taxi-register-form">
+                <div class="taxi-register">
+                    <ul class="register-tabs">
+                        <li><a  class="active" href="javascript:viod(0)">Citi Taxi</a>
+                        <li><a href="javascript:viod(0)">Outstation</a></li>
+                        <li><a href="javascript:viod(0)">Rentals</a></li>
+                    </ul>
+                    <div class="register-content">
+                        <form name="taxi-booking" id="taxi-booking" method="post">
+                            <h3>Your everyday travel partner</h3>
+                            <p>Ac Cabs for point to point travel</p>
+                            <div class="form-group">
+                                <!--<input type="text" class="form-control" id="locations" placeholder="Current Location" name="locations">-->
+                                <input type="text" class="form-control" placeholder="Current Location" name="location" [(ngModel)]="location" #startPoint="ngModel" Googleplace (setAddress)="getAddressOnChange($event,startPoint)">
+                            </div>
+                            <div class="form-group">
+                                <!--<input type="text" class="form-control" id="drop-locations" placeholder="Drop Locations" name="drop-locations">-->
+                                <input type="text" class="form-control" placeholder="Drop Location" name="droplocation" [(ngModel)]="droplocation" #endPoint="ngModel" Googleplace (setAddress)="getAddressOnChange($event,endPoint)">
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" id="nowlocation" name="nowlocation">
+                                    <option>Now</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-search">Search Cabs</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Available rides -->
+<div class="container-fluid taxi-availavle-rides">
+    <div class="container taxi-container-rides">
+        <h3 class="booking-title">Available Rides</h3>
+        <div class="col-md-12 col-sm-12 col-xs-12 taxi-booking-list table-responsive">
+            <table class="table">
+                <thead>
+                    <th></th>
+                    <th colspan="2">vehice Type</th>
+                    <th>Price</th>
+                    <th>Book</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <img src="assets/images/car4.png">
+                            <p>2 min</p>
+                        </td>
+                        <td>
+                            <h4>Micro</h4>
+                            <h6>Small fare for short rides</h6>
+                        </td>
+                        <td>$5-$6</td>
+                        <td>
+                            <button type="button" class="btn btn-booking">Book Now</button>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <img src="assets/images/car4.png">
+                            <p>2 min</p>
+                        </td>
+                        <td>
+                            <h4>Micro</h4>
+                            <h6>Small fare for short rides</h6>
+                        </td>
+                        <td>$5-$6</td>
+                        <td>
+                            <button type="button" class="btn btn-booking">Book Now</button>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <img src="assets/images/car4.png">
+                            <p>2 min</p>
+                        </td>
+                        <td>
+                            <h4>Micro</h4>
+                            <h6>Small fare for short rides</h6>
+                        </td>
+                        <td>$5-$6</td>
+                        <td>
+                            <button type="button" class="btn btn-booking">Book Now</button>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <img src="assets/images/car4.png">
+                            <p>2 min</p>
+                        </td>
+                        <td>
+                            <h4>Micro</h4>
+                            <h6>Small fare for short rides</h6>
+                        </td>
+                        <td>$5-$6</td>
+                        <td>
+                            <button type="button" class="btn btn-booking">Book Now</button>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <img src="assets/images/car4.png">
+                            <p>2 min</p>
+                        </td>
+                        <td>
+                            <h4>Micro</h4>
+                            <h6>Small fare for short rides</h6>
+                        </td>
+                        <td>$5-$6</td>
+                        <td>
+                            <button type="button" class="btn btn-booking">Book Now</button>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <img src="assets/images/car4.png">
+                            <p>2 min</p>
+                        </td>
+                        <td>
+                            <h4>Micro</h4>
+                            <h6>Small fare for short rides</h6>
+                        </td>
+                        <td>$5-$6</td>
+                        <td>
+                            <button type="button" class="btn btn-booking">Book Now</button>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
