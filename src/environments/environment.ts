@@ -5,6 +5,5 @@
 
 export const environment = {
   production: false,
-  LoginUrl:'',
-  RegisterUr:'',
+  APIURL:'localhost:8080/taxi/api/'
 };

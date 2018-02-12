@@ -8,4 +8,6 @@ if (environment.production) {
   enableProdMode();
 }
 
+// const serverUrl = environment.APIURL;
+
 platformBrowserDynamic().bootstrapModule(AppModule);
