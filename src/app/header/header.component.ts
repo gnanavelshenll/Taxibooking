@@ -1,5 +1,8 @@
 import { OnInit, Component,Directive, forwardRef, Attribute,OnChanges, SimpleChanges,Input } from '@angular/core';
 import { NG_VALIDATORS,Validator,Validators,AbstractControl,ValidatorFn } from '@angular/forms';
+import { HeaderModel } from './header.models';
+import { HeaderService } from './header.service';
+import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: 'app-header',
@@ -8,19 +11,27 @@ import { NG_VALIDATORS,Validator,Validators,AbstractControl,ValidatorFn } from '
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private header:HeaderModel, private headerService : HeaderService) { }
 
   ngOnInit() {
   }
   loading = false;
- 
+  loginRes;
+  get
   powers = ['Really Smart', 'Super Flexible',
             'Super Hot', 'Weather Changer'];
   model = new User('','',null,'','','','');
-  submitted = false;
-  onSubmit() { this.submitted = true; }
-  newHero() {
-   // this.model = new User('','');
+  loginData =  this.header.login;
+  registrationData =  this.header.registration;
+  loginSubmitted = false;
+  registrationSubmitted = false;
+  onSubmit() { this.registrationSubmitted = true; }
+  loginSubmit() {
+   console.log(this.loginData);
+  this.headerService.login(this.loginData).subscribe(data => {
+    console.log(data);
+  });
+   console.log(this.loginRes);
   }
 
 }
