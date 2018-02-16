@@ -1,6 +1,5 @@
-
 <!-- Banner Content Start -->
-<div class="container-fluid taxi-booking-details">
+<div class="container-fluid" [class.taxi-booking-details]="checkUser" [class.taxi-booking-details-no-margin]='!checkUser'>
 	<div class="container taxi-container-details">
 		<div class="col-md-12 col-sm-12 col-xs-12 taxi-service-datils">
 			<div class="col-md-6 col-sm-6 col-xs-12 taxi-safe-hands">
@@ -10,30 +9,35 @@
 			<div class="col-md-6 col-sm-6 col-xs-12 taxi-register-form">
 				<div class="taxi-register">
 					<ul class="register-tabs">
-						<li><a  class="active" href="javascript:viod(0)">Citi Taxi</a>
-						<li><a href="javascript:viod(0)">Outstation</a></li>
-						<li><a href="javascript:viod(0)">Rentals</a></li>
+						<li><a  class="active" href="javascript:void(0)">Citi Taxi</a>
+						<li><a href="javascript:void(0)">Outstation</a></li>
+						<li><a href="javascript:void(0)">Rentals</a></li>
 					</ul>
 					<div class="register-content">
-						<form name="taxi-booking" id="taxi-booking" method="post">
+						<form (ngSubmit) ="goToBooking(bookingForm.form.valid);"  name="bookingForm" #bookingForm="ngForm">
 							<h3>Your everyday travel partner</h3>
 							<p>Ac Cabs for point to point travel</p>
 							<div class="form-group">
 								<!--<input type="text" class="form-control" id="locations" placeholder="Current Location" name="locations">-->
-								<input type="text" class="form-control" placeholder="Current Location" name="location" [(ngModel)]="location" #LocationCtrl="ngModel" Googleplace (setAddress)="getAddressOnChange($event,LocationCtrl)">
+								<input type="text" class="form-control" placeholder="Current Location" name="startLocationCtrl" [(ngModel)]="startlocation.address" #startLocationCtrl="ngModel" Googleplace (setAddress)="getAddressOnChange($event,startLocationCtrl)" required>
+								<div [hidden]="startLocationCtrl.valid || startLocationCtrl.pristine" class="error-block">
+									<div [hidden]="!startLocationCtrl.hasError('required')" class="error-block">Enter a Start Location</div>
+								</div>
 							</div>
 							<div class="form-group">
 								<!--<input type="text" class="form-control" id="drop-locations" placeholder="Drop Locations" name="drop-locations">-->
-
-								<input type="text" class="form-control" placeholder="Drop Location" name="droplocation" [(ngModel)]="droplocation" #LocationCtrl="ngModel" Googleplace (setAddress)="getAddressOnChange($event,LocationCtrl)">
+								<input type="text" class="form-control" placeholder="Drop Location" name="dropLocationCtrl" [(ngModel)]="droplocation.address" #dropLocationCtrl="ngModel" Googleplace (setAddress)="getAddressOnChange($event,dropLocationCtrl)" required>
+								<div [hidden]="dropLocationCtrl.valid || dropLocationCtrl.pristine" class="error-block">
+									<div [hidden]="!dropLocationCtrl.hasError('required')" class="error-block">Enter a Drop Location</div>
+								</div>
 							</div>
 							<div class="form-group">
-								<select class="form-control" id="nowlocation" name="nowlocation">
+								<select class="form-control" #TimeVar="ngModel" [(ngModel)] = "pickupTime"  name="pickupTime">
 									<option>Now</option>
 								</select>
 							</div>
 							<div class="form-group">
-								<button type="button" class="btn btn-search">Search Cabs</button>
+								<button type="submit" class="btn btn-search" >Search Cabs</button>
 							</div>
 						</form>
 					</div>

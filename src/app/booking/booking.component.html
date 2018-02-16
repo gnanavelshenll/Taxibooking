@@ -1,0 +1,68 @@
+<!-- Banner Content Start -->
+<div class="container-fluid taxi-booking-details">
+	<div class="container taxi-container-details">
+		<div class="col-md-12 col-sm-12 col-xs-12 taxi-service-datils">
+			<div class="taxi-register-form">
+				<div class="taxi-register">
+					<div class="register-content">
+						<form name="taxi-booking" id="taxi-booking" method="post">
+							<h3>Your everyday travel partner</h3>
+							<p>A/C Cabs for point to point travel</p>
+							<div class="form-group">
+								<!--<input type="text" class="form-control" id="locations" placeholder="Current Location" name="locations">-->
+								<input type="text" class="form-control" placeholder="Current Location" name="startlocation" [(ngModel)]="bookingData.startLocation.address" #startLocationCtrl="ngModel" Googleplace (setAddress)="getAddressOnChange($event,LocationCtrl)">
+							</div>
+							<div class="form-group">
+								<!--<input type="text" class="form-control" id="drop-locations" placeholder="Drop Locations" name="drop-locations">-->
+								<input type="text" class="form-control" placeholder="Drop Location" name="droplocation" [(ngModel)]="bookingData.dropLocation.address" #dropLocationCtrl="ngModel" Googleplace (setAddress)="getAddressOnChange($event,LocationCtrl)">
+							</div>
+							<div class="form-group">
+								<select class="form-control" id="nowlocation" [(ngModel)] = "bookingData.bookingTime" name="nowlocation">
+									<option>Now</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<button type="button" class="btn btn-search" (click)= "reloadDriverList()">Search Cabs</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Banner Content End -->
+<div class="container taxi-container-rides page">
+	<h3 class="booking-title">Available Rides</h3>
+	<div class="col-md-12 col-sm-12 col-xs-12 taxi-booking-list table-responsive">
+		<table class="table">
+			<thead>
+				<tr>
+					<th></th>
+					<th colspan="2">vehice Type</th>
+					<th>Price</th>
+					<th>Book</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let rides of rideList$ ">
+					<td></td>
+					<td>
+						<img src="../assets/images/car4.png">
+						<p>{{rides.duration}}</p>
+					</td>
+					<td>
+						<h4>{{rides.carType}}</h4>
+						<h6>{{rides.carTypeDesc}}</h6>
+					</td>
+					<td>{{rides.rates}}</td>
+					<td>
+						<button type="button" class="btn btn-booking">Book Now</button>
+					</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>		
+</div>

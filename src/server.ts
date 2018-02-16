@@ -28,7 +28,18 @@ app.set('views', 'src')
 app.get('*.*', express.static(join(__dirname, '..', 'dist')));
 
 app.get('*', (req, res) => {
-  res.render('index', { req });
+  res.render('index', {
+    req: req,
+    res: res,
+    providers: [
+      {
+        provide: 'REQUEST', useValue: (req)
+      },
+      {
+        provide: 'RESPONSE', useValue: (res)
+      }
+    ] 
+  });
 });
 
 app.listen(PORT, () => {
