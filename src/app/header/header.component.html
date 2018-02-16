@@ -1,6 +1,6 @@
 <!-- Top Header Start -->
 <div class="container-fluid taxi-booking-heater">
-   <div class="taxi-heater">
+   <div class="taxi-heater" *ngIf="hideRegLogin">
       <div class="container taxi-container-header">
          <nav class="navbar taxi-navbar">
             <div class="navbar-header">
@@ -42,8 +42,9 @@
                   <li><a href="payment-new.html">Tariff</a></li>
                   <li><a href="finish-rides.html">Offers</a></li>
                   <li>
-                     <a href="#" class="col-md-6 col-sm-6 col-xs-6 register" data-toggle="modal" data-target="#SignupModal">Register</a>
-                     <a href="#" class="col-md-6 col-sm-6 col-xs-6 login" data-toggle="modal" data-target="#LoginModal">Login</a>
+                     <a href="#" class="col-md-6 col-sm-6 col-xs-6 register" *ngIf = "!hideRegLogin" data-toggle="modal" data-target="#SignupModal">Register</a>
+                     <a href="#" class="col-md-6 col-sm-6 col-xs-6 login" *ngIf = "!hideRegLogin" data-toggle="modal" data-target="#LoginModal">Login</a>
+                     <a href="#" class="col-md-12 col-sm-12 col-xs-12 logout" *ngIf = "hideRegLogin" (click) = "logout()">Logout</a>
                   </li>
                </ul>
             </div>
@@ -52,99 +53,111 @@
    </div>
 </div>
 <!-- Top Header End -->
-<!-- Login Modal -->
+<!-- Login Modal Start -->
 <div id="LoginModal" class="modal fade" role="dialog">
    <div class="modal-dialog modal-sm">
       <div class="modal-content">
          <div class="modal-body login_modal_body">
             <img src="assets/images/Logo.png" class="modal_logo">
-            <form (ngSubmit)="loginSubmit()" name="login" #loginForm="ngForm">
+            <form (ngSubmit) = "loginSubmit()" name="login" #loginForm="ngForm">
                <div class="form-group">
-                    <input type="email" class="form-control" name="email" [(ngModel)] = "loginData.email" #email="ngModel" placeholder="Email Address" autocomplete="off">
-                    <div [hidden]="email.valid || email.pristine" class="error-block">
-                        <div [hidden]="!email.hasError('required')" class="error-block">Enter a Email Id</div>
+                    <input type="email" class="form-control" name="loginEmail" [(ngModel)] = "loginData.login.email" #loginEmail="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required placeholder="Email Address" autocomplete="off" (blur) = "getForm(loginForm.form.controls.loginemail)">
+                    <div [hidden]="loginEmail.valid || loginEmail.pristine" class="error-block">
+                        <div [hidden]="!loginEmail.hasError('required')" class="error-block">Enter a Email Id</div>
+                        <div [hidden]="!loginEmail.hasError('pattern')" class="error-block">Enter a valid Email Id</div>
                     </div>
                </div>
                <div class="form-group">
-                    <input type="password" class="form-control" [(ngModel)] = "loginData.password" #password="ngModel" name="password" placeholder="Password" autocomplete="off">
-                    <div [hidden]="password.valid || password.pristine" class="error-block">
-                        <div [hidden]="!password.hasError('required')" class="error-block">Enter a password</div>
+                    <input type="password" class="form-control" required [(ngModel)] = "loginData.login.password" #loginPassword="ngModel" name="loginPassword" placeholder="Password" autocomplete="off">
+                    <div [hidden]="loginPassword.valid || loginPassword.pristine" class="error-block">
+                        <div [hidden]="!loginPassword.hasError('required')" class="error-block">Enter a password</div>
                     </div>
                </div>
                <div class="form-group">
-                    <select [(ngModel)]="loginData.userType" class="form-control" #userType="ngModel"  name="userType" required>
-                        <option value=null>Select User Type</option>
+                    <select [(ngModel)]="loginData.login.usertype" class="form-control" #loginUsertype="ngModel"  name="loginUsertype" required>
+                        <option value="">Select User Type</option>
                         <option value=1>Driver</option>
                         <option value=2>User</option>
                     </select>
-                    <div [hidden]="userType.valid || userType.pristine" class="error-block">
-                       <div [hidden]="!userType.hasError('required')" class="error-block">Select user type</div>
+                    <div [hidden]="loginUsertype.valid || loginUsertype.pristine" class="error-block">
+                       <div [hidden]="!loginUsertype.hasError('required')" class="error-block">Select user type</div>
                     </div>
                 </div>
-               <input type="submit" [disabled] = "!loginForm.form.valid" class="btn btn-search">
-               <p class="modal_text">Don't have an account? <a href="#" class="modal_link" data-toggle="modal" data-target="#SignupModal">Signup</a></p>
+               <button type="submit" [disabled] = "!loginForm.form.valid" class="btn btn-success btn-block" >Submit</button>
+               <button type="button" #closeBtn class="hidden" data-dismiss="modal">Submit</button>
+               <p class="modal_text text-margin">Don't have an account? <a href="#" class="modal_link" data-toggle="modal" data-target="#SignupModal">Signup</a></p>
             </form>
          </div>
       </div>
    </div>
 </div>
-<!-- Signup Modal -->
+<!-- Login Modal End -->
+<!-- Signup Modal Start -->
 <div id="SignupModal" class="modal fade" role="dialog">
-   <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-         <div class="modal-body signup_modal_body">
-            <img src="assets/images/Logo.png" class="modal_logo">
-            <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
-            <div class="form-group">
-               <input type="text" class="form-control" id="name" required	pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="model.name" name="name" #name="ngModel" placeholder="First name" autocomplete="off">
-               <div [hidden]="name.valid || name.pristine" class="error-block">
-                  <div [hidden]="!name.hasError('required')">Name is required</div>
-                  <div [hidden]="!name.hasError('pattern')">Only alphabetsallowed</div>
-               </div>
+    <div class="modal-dialog modal-sm">
+        
+        <div class="modal-content">
+            <!-- <div class="row col-xs-12">
+                <div class="col-md-10 col-xs-10"></div>
+                <div class="col-md-2 col-xs-2">
+                    <span class="pull-right"> x </span>
+                </div>
+            </div> -->
+            <div class="modal-body signup_modal_body">
+                <img src="assets/images/Logo.png" class="modal_logo">
+                <form (ngSubmit)="registerSubmit()" #registerForm="ngForm">
+                <div class="form-group">
+                <input type="text" class="form-control" id="name" required	pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="registrationData.name" name="name"register #name="ngModel" placeholder="First name" autocomplete="off">
+                <div [hidden]="name.valid || name.pristine" class="error-block">
+                    <div [hidden]="!name.hasError('required')">Name is required</div>
+                    <div [hidden]="!name.hasError('pattern')">Only alphabetsallowed</div>
+                </div>
+                </div>
+                <div class="form-group">
+                <input type="text" class="form-control" id="emailaddress" required [(ngModel)]="registrationData.email" name="email"
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  #email="ngModel" placeholder="Email Address" autocomplete="off">
+                <div [hidden]="email.valid || email.pristine" class="error-block">
+                    <div [hidden]="!email.hasError('required')">Email is required</div>
+                    <div [hidden]="!email.hasError('pattern')">Email format should be <small><b>joe@abc.com</b></small></div>
+                </div>
+                </div>
+                <div class="form-group">
+                <input type="text" class="form-control" id="mobilenumber" required
+                [(ngModel)]="registrationData.phone" name="mobilenumber" pattern="[0-9]*" minlength="10" maxlength="10"  #phone="ngModel" placeholder="Mobile Number" autocomplete="off">
+                <div [hidden]="phone.valid || phone.pristine"
+                    class="error-block">
+                    <div [hidden]="!phone.hasError('minlength')">Mobile should be 10digit</div>
+                    <div [hidden]="!phone.hasError('required')">Mobile is required</div>
+                    <div [hidden]="!phone.hasError('pattern')">Mobile numberr should be only numbers</div>
+                </div>
+                </div>
+                <div class="form-group">
+                <input type="password" class="form-control" id="password" required [(ngModel)]="registrationData.password" name="password"	#password="ngModel" placeholder="Password" autocomplete="off">
+                <div [hidden]="!password.hasError('required') || password.pristine" class="error-block">Password is required</div>
+                </div>
+                <div class="form-group">
+                <input type="password" class="form-control" id="confirmPassword" required validateEqual="password"
+                [(ngModel)]="registrationData.confirmPassword" name="confirmPassword" #confirmPassword="ngModel"  placeholder="Confirm Password" autocomplete="off">
+                <div [hidden]="confirmPassword.valid || confirmPassword.pristine"
+                    class="error-block">
+                    Passwords did not match
+                </div>
+                </div>
+                <div class="form-group">
+                <select [(ngModel)]="registrationData.type" class="form-control" #type="ngModel"  name="type" required>
+                <option value="">Select User Type</option>
+                <option value="1">Driver</option>
+                <option value="2">User</option>
+                </select>
+                <div [hidden]="type.valid || type.pristine" class="error-block">
+                    <div [hidden]="!type.hasError('required')" class="error-block">Select user type</div>
+                </div>
+                </div>
+                <button type="submit" class="btn btn-success btn-block" [disabled]="!registerForm.form.valid">Submit</button>
+                <button type="button" class="btn btn-default btn-block" data-dismiss="modal">Cancel</button>
+                </form>
             </div>
-            <div class="form-group">
-               <input type="text" class="form-control" id="emailaddress" required [(ngModel)]="model.email" name="email"
-               pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  #email="ngModel" placeholder="Email Address" autocomplete="off">
-               <div [hidden]="email.valid || email.pristine" class="error-block">
-                  <div [hidden]="!email.hasError('required')">Email is required</div>
-                  <div [hidden]="!email.hasError('pattern')">Email format should be <small><b>joe@abc.com</b></small></div>
-               </div>
-            </div>
-            <div class="form-group">
-               <input type="text" class="form-control" id="mobilenumber" required
-               [(ngModel)]="model.mobile" name="mobilenumber" pattern="[0-9]*" minlength="10" maxlength="10"  #mobile="ngModel" placeholder="Mobile Number" autocomplete="off">
-               <div [hidden]="mobile.valid || mobile.pristine"
-                  class="error-block">
-                  <div [hidden]="!mobile.hasError('minlength')">Mobile should be 10digit</div>
-                  <div [hidden]="!mobile.hasError('required')">Mobile is required</div>
-                  <div [hidden]="!mobile.hasError('pattern')">Mobile numberr should be only numbers</div>
-               </div>
-            </div>
-            <div class="form-group">
-               <input type="password" class="form-control" id="password" required [(ngModel)]="model.password" name="password"	#password="ngModel" placeholder="Password" autocomplete="off">
-               <div [hidden]="!password.hasError('required') || password.pristine" class="error-block">Password is required</div>
-            </div>
-            <div class="form-group">
-               <input type="password" class="form-control" id="confirmPassword" required validateEqual="password"
-               [(ngModel)]="model.confirmPassword" name="confirmPassword" #confirmPassword="ngModel"  placeholder="Confirm Password" autocomplete="off">
-               <div [hidden]="confirmPassword.valid || confirmPassword.pristine"
-                  class="error-block">
-                  Passwords did not match
-               </div>
-            </div>
-            <div class="form-group">
-               <select [(ngModel)]="model.usertype" class="form-control" #usertype="ngModel"  name="usertype" required>
-               <option value="">Select User Type</option>
-               <option value="1">Driver</option>
-               <option value="2">User</option>
-               </select>
-               <div [hidden]="usertype.valid || usertype.pristine" class="error-block">
-                  <div [hidden]="!usertype.hasError('required')" class="error-block">Select user type</div>
-               </div>
-            </div>
-            <button type="submit" class="btn btn-success btn-block" [disabled]="!registerForm.form.valid">Submit</button>
-            </form>
-         </div>
-      </div>
-   </div>
+        </div>
+    </div>
 </div>
+<!-- Signup Modal End -->
