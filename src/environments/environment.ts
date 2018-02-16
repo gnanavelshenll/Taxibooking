@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  APIURL:'localhost:8080/taxi/api/'
+  APIURL:'http://demo.shenll.net/taxibooking/api/'
 };

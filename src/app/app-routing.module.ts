@@ -15,7 +15,7 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
-    path:'ride-booking/:pickAddress/:dropAddress/:time',
+    path:'ride-booking',
     component: BookingComponent
   }
 ];

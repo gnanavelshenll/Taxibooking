@@ -1,10 +1,12 @@
+//Booking Page Model
 export class BookingModel {
-
- availableRides : Array<Object>;
+	
+	// Available Ride array
+ 	availableRides : Array<object>;
  
-constructor ()
-{
-	this.availableRides =[];
-}
+	constructor ()
+	{
+		this.availableRides =[];
+	}
 
 }

@@ -1,5 +1,5 @@
 <!-- Banner Content Start -->
-<div class="container-fluid taxi-booking-details">
+<div class="container-fluid" [class.taxi-booking-details]="checkUser" [class.taxi-booking-details-no-margin]='!checkUser'>
 	<div class="container taxi-container-details">
 		<div class="col-md-12 col-sm-12 col-xs-12 taxi-service-datils">
 			<div class="taxi-register-form">
@@ -14,7 +14,6 @@
 							</div>
 							<div class="form-group">
 								<!--<input type="text" class="form-control" id="drop-locations" placeholder="Drop Locations" name="drop-locations">-->
-
 								<input type="text" class="form-control" placeholder="Drop Location" name="droplocation" [(ngModel)]="bookingData.dropLocation.address" #dropLocationCtrl="ngModel" Googleplace (setAddress)="getAddressOnChange($event,LocationCtrl)">
 							</div>
 							<div class="form-group">
@@ -23,7 +22,7 @@
 								</select>
 							</div>
 							<div class="form-group">
-								<button type="button" class="btn btn-search" (click)= "getRides()">Search Cabs</button>
+								<button type="button" class="btn btn-search" (click)= "reloadDriverList()">Search Cabs</button>
 							</div>
 						</form>
 					</div>
@@ -33,7 +32,6 @@
 	</div>
 </div>
 <!-- Banner Content End -->
-
 <div class="container taxi-container-rides page">
 	<h3 class="booking-title">Available Rides</h3>
 	<div class="col-md-12 col-sm-12 col-xs-12 taxi-booking-list table-responsive">
@@ -48,7 +46,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor="let rides of availableRides">
+				<tr *ngFor="let rides of rideList$ ">
 					<td></td>
 					<td>
 						<img src="../assets/images/car4.png">
