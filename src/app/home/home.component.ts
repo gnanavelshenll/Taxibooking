@@ -4,7 +4,7 @@ import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Router,NavigationStart } from "@angular/router";
 import { LocationTaxiModel } from './location.taxi.model';
 //import { GoogleplaceDirective } from '../directive/googleplace-directive';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -48,8 +48,7 @@ export class HomeComponent implements OnInit {
           else {
             this.checkUser = false;
           }          
-      }
-      
+      }      
     });
 
     this.startlocation= new LocationTaxiModel();

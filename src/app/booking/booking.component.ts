@@ -4,9 +4,10 @@ import { NG_VALIDATORS,Validator,Validators,AbstractControl,ValidatorFn } from '
 import { MapsAPILoader } from '@agm/core';
 import { BookingModel } from './booking.model';
 import { BookingService } from './booking.service';
-import { Router, ActivatedRoute } from "@angular/router";
+import { Router, ActivatedRoute, NavigationStart } from "@angular/router";
 import { LocationTaxiModel } from "../home/location.taxi.model";
 import { GoogleplaceDirective } from '../directive/googleplace-directive';
+import { AuthService } from '../service/auth.service';
 
 
 @Component({
@@ -22,6 +23,7 @@ export class BookingComponent implements OnInit {
   private  bookingData : any;
   private sendData : object;
   private rideList$;
+  private checkUser:boolean;
   private options = {
     enableHighAccuracy: false,
     timeout: 5000,
@@ -33,9 +35,23 @@ export class BookingComponent implements OnInit {
       private routerParams:ActivatedRoute, 
       private bookingService:BookingService,
       private mapsAPILoader: MapsAPILoader,
-      private booking: BookingModel) {
+      private booking: BookingModel,
+      private auth:AuthService) {
 
         this.rideList$ = this.booking.availableRides;
+
+        this.router.events.subscribe(e => {
+          if(e instanceof NavigationStart)
+          {
+              if(this.auth.checkAuth()) {
+                this.checkUser = true;
+              }
+              else {
+                this.checkUser = false;
+                console.log(this.checkUser);      
+              }
+          }
+        });
 
       }
 
@@ -64,7 +80,14 @@ export class BookingComponent implements OnInit {
         }
       });
       console.log(this.bookingData);
-      
+      this.auth.globalChange.subscribe((data:any)=>{
+        if(data && data.accessToken){
+          this.checkUser=true;
+        }
+        else{
+          this.checkUser=false;
+        }
+      });
   	}
 
   	getAddressOnChange(event,LocationCtrl){

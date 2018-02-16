@@ -17,7 +17,7 @@ import { AboutComponent } from './about/about.component';
 import { GoogleplaceDirective } from './directive/googleplace-directive';
 import { EqualValidator } from './header/password.match.directive';
 import { BookingComponent } from './booking/booking.component';
-import { AuthService } from './services/auth.service';
+import { AuthService } from './service/auth.service';
 
 
 //Module Invocation

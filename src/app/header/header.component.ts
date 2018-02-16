@@ -6,7 +6,7 @@ import { HeaderService } from './header.service';
 import { Router, ActivatedRoute,NavigationStart } from "@angular/router";
 import { Observable } from "rxjs/Observable";
 import { CookieService } from 'ngx-cookie';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../service/auth.service';
 
 
 @Component({
